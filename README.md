@@ -1,7 +1,9 @@
-# Orbital23
+# Polaris
 NUS Orbital Project '23
 
 AY22/23 Summer Project
+
+Achievement Level: Artemis
 
 Contributors: Chee Wei Xiong Clifton & Ryan Peh Wye Kin
 
