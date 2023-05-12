@@ -9,7 +9,15 @@ import {
 
 import colours from "./config/colours";
 
+import { useFonts } from "expo-font";
+
 export default function Page() {
+
+  {/* Importing custom fonts */}
+  const [fontsLoaded] = useFonts({
+    LatoBold: require("../app/assets/fonts/Lato/Lato-Bold.ttf"),
+    LatoRegular: require("../app/assets/fonts/Lato/Lato-Regular.ttf"),
+  })
 
   return (
     <SafeAreaView style={styles.container}>
@@ -55,8 +63,7 @@ const styles = StyleSheet.create({
     color: colours.white,
     paddingTop: 50,
     marginBottom: -40,
-    // TODO: Import font
-    //fontFamily: "Lato",
+    fontFamily: 'LatoBold',
   },
   subtitle: {
     flex : 1,
@@ -64,7 +71,7 @@ const styles = StyleSheet.create({
     fontWeight: "regular",
     color: colours.subtitle,
     marginBottom: 0,
-    //fontFamily: "Lato"
+    fontFamily: 'LatoRegular'
   },
   button: {
     justifyContent: "center",
@@ -78,6 +85,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     color: colours.white,
-    //fontFamily: "Lato",
+    fontFamily: 'LatoBold',
   },
 });
