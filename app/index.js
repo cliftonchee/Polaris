@@ -11,6 +11,12 @@ import colours from "./config/colours";
 
 import { useFonts } from "expo-font";
 
+{/* For navigating between screens */}
+import { NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
+
 export default function Page() {
 
   {/* Importing custom fonts */}
@@ -24,7 +30,7 @@ export default function Page() {
 
       <Image 
         style={styles.image} 
-        source={require('../app/images/polaris-constellation.png')} 
+        source={require('../app/assets/images/polaris-constellation.png')} 
       />
 
       {/* Title */}
