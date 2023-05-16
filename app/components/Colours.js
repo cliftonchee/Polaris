@@ -4,5 +4,6 @@ export default {
     black: "#000",
     white: "#fff",
     title: "fff",
-    subtitle: "#605c6e"
+    subtitle: "#626070",
+    gray: "#ada6bd",
 }
