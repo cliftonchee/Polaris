@@ -4,7 +4,7 @@ import {
     TextInput,
 } from "react-native";
 
-import colours from "../components/Colours";
+import colours from "./Colours";
 
 const InputBox = ({initialText, onChangeText}) => {
     return (
