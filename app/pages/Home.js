@@ -5,7 +5,7 @@ import Button from "../components/Button";
 
 // To navigate between screens, add '{ navigation }'
 // as an argument, and under onPress, refer to below
-export default function StartPage({ navigation }) {
+export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -14,7 +14,7 @@ export default function StartPage({ navigation }) {
       />
 
       {/* Title */}
-      <Text style={styles.title}>P O L A R I S</Text>
+      <Text style={styles.title}>YOU ARE GAY</Text>
       {/* Subtitle */}
       <Text style={styles.subtitle}>Connect with the stars</Text>
 
@@ -24,7 +24,7 @@ export default function StartPage({ navigation }) {
           styleOverride={styles.buttonLayout}
           // Navigation to Login page
           onPress={() => navigation.navigate("Login")}
-          title="Get started"
+          title="YOU ARE BLACK"
         ></Button>
       </View>
     </SafeAreaView>

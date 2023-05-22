@@ -3,41 +3,34 @@ import colours from "../components/Colours";
 import Button from "../components/Button";
 import InputBoxEmail from "../components/InputBox/InputBoxEmail";
 import InputBoxPass from "../components/InputBox/InputBoxPass";
+import InputBoxUser from "../components/InputBox/InputBoxUser";
 import { KeyboardAvoidingView } from "react-native";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
 
-export default function Login({ navigation }) {
+export default function SignUp({ navigation }) {
   {
     /* State creation */
   }
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const auth = getAuth();
-
   {
-    /* Method to handle Login */
+    /* Method to handle registration */
   }
-  const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
+  const auth = getAuth();
+  const handleRegister = () => {
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log("Logged in with: ", user.email);
-
-        {
-          /* Navigation if successful */
-        }
-        navigation.navigate("Home");
+        console.log("Registered with: ", user.email);
+        navigation.navigate("Login");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        // Handle the error
       });
   };
 
@@ -48,13 +41,14 @@ export default function Login({ navigation }) {
         style={styles.image}
         source={require("../assets/images/polaris-constellation.png")}
       />
-
       {/* Title */}
       <Text style={styles.title}>P O L A R I S</Text>
-
       {/* Login details */}
       <View style={styles.loginDetails}>
         {/* Input Boxes with Text above */}
+        {/* Username */}
+        <InputBoxUser initialText="Username"></InputBoxUser>
+
         {/* Email */}
         <InputBoxEmail
           value={email}
@@ -68,24 +62,16 @@ export default function Login({ navigation }) {
         >
           secureTex
         </InputBoxPass>
-
-        {/* Forgot Password */}
-        <Button // TODO: Add onPress
-          styleOverride={styles.forgotPassword}
-          title="Forgot Password"
-          textOverride={styles.forgotPasswordText}
-        ></Button>
       </View>
 
       {/* Customisable Buttons */}
       <View style={styles.buttonsSideBySide}>
         {/* TODO: Add onPress to new pages */}
         <Button
+          // Navigation to Login page
+          onPress={handleRegister}
           title="Register"
-          onPress={() => navigation.navigate("Register")}
         ></Button>
-
-        <Button title="Sign In" onPress={handleLogin}></Button>
       </View>
     </KeyboardAvoidingView>
   );
@@ -119,21 +105,9 @@ const styles = StyleSheet.create({
   },
   loginDetails: {
     flex: 1,
-  },
-  forgotPassword: {
-    flex: 0.33,
-    fontSize: 10,
-    color: colours.gray,
-    backgroundColor: colours.primary,
-    height: 0,
-    width: 100,
-    marginLeft: -10,
-  },
-  forgotPasswordText: {
-    fontSize: 10,
-    color: colours.gray,
+    paddingBottom: 20,
   },
   buttonsSideBySide: {
-    flex: 2,
+    flex: 1,
   },
 });
