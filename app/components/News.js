@@ -56,7 +56,13 @@ const News = () => {
   }
 
   return (
-    <View>
+    <View
+      style={{
+        backgroundColor: "rgba(128, 128, 128, 0.1)",
+        borderRadius: 20,
+        width: 358,
+      }}
+    >
       <View style={styles.container}>
         <Pressable onPress={() => handlePress(imageData.results[0].url)}>
           <Image
@@ -86,7 +92,7 @@ const News = () => {
             style={styles.image}
           />
 
-          <View style={{ borderRadius: 10000 }}>
+          <View>
             {/* Image title for reference */}
             <Text style={styles.textContainer}>
               {imageData.results[2].title}
@@ -103,14 +109,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
+    overflow: "hidden",
+    marginLeft: 15,
+    marginRight: 15,
+    marginBottom: 5,
+    marginTop: 5,
   },
   image: {
     width: 350,
     height: 75,
     paddingBottom: 10,
-    justifyContent: "center",
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
   },
   textContainer: {
     color: colours.white,
