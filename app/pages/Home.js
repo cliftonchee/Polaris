@@ -1,30 +1,53 @@
-import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
-
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  Pressable,
+  ImageBackground,
+} from "react-native";
+import React from "react";
 import colours from "../components/Colours";
 import Button from "../components/Button";
+import NasaImage from "../components/NasaImage";
+import News from "../components/News";
 
 // To navigate between screens, add '{ navigation }'
 // as an argument, and under onPress, refer to below
 export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Image
-        style={styles.image}
-        source={require("../assets/images/polaris-constellation.png")}
-      />
+      <View style={{ paddingLeft: 6 }}>
+        <Text style={styles.newsText}>Astronomy Picture of the day</Text>
+      </View>
 
-      {/* Title */}
-      <Text style={styles.title}>YOU ARE GAY</Text>
-      {/* Subtitle */}
-      <Text style={styles.subtitle}>Connect with the stars</Text>
+      <View style={{ alignItems: "center" }}>
+        <Pressable onPress={() => navigation.navigate("Login")}>
+          {/* NASA Image of the day */}
+          <View style={styles.imageContainer}>
+            <NasaImage />
+          </View>
+        </Pressable>
+      </View>
+
+      <View>
+        <Text style={styles.newsText}> Latest News </Text>
+      </View>
+
+      <Pressable onPress={() => navigation.navigate("Login")}>
+        {/* NASA Image of the day */}
+        <View style={styles.imageContainer}>
+          <News />
+        </View>
+      </Pressable>
 
       {/* Customisable Button */}
       <View style={styles.button}>
         <Button
           styleOverride={styles.buttonLayout}
-          // Navigation to Login page
           onPress={() => navigation.navigate("Login")}
-          title="YOU ARE BLACK"
+          title="HOME"
         ></Button>
       </View>
     </SafeAreaView>
@@ -35,26 +58,25 @@ const styles = StyleSheet.create({
   container: {
     // Background
     flex: 1,
-    alignItems: "center",
     backgroundColor: colours.primary,
   },
+  imageContainer: {
+    paddingTop: 10,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  newsText: {
+    fontSize: 20,
+    fontFamily: "LatoBold",
+    color: colours.white,
+    paddingLeft: 15,
+    paddingTop: 10,
+    justifyContent: "center",
+  },
   image: {
-    flex: 3,
     justifyContent: "center",
     maxWidth: 960,
-  },
-  title: {
-    flex: 0.5,
-    alignItems: "center",
-    fontSize: 50,
-    color: colours.white,
-    fontFamily: "LatoBold",
-  },
-  subtitle: {
-    flex: 0.4,
-    fontSize: 24,
-    color: colours.subtitle,
-    fontFamily: "LatoRegular",
+    justifyContent: "center",
   },
   buttonLayout: {
     // Added on top of original button

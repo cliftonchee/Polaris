@@ -72,6 +72,11 @@ export default function SignUp({ navigation }) {
           onPress={handleRegister}
           title="Register"
         ></Button>
+        <Button
+          // Navigation to Login page
+          onPress={() => navigation.navigate("Login")}
+          title="Go Back"
+        ></Button>
       </View>
     </KeyboardAvoidingView>
   );
@@ -95,7 +100,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     color: colours.white,
     fontFamily: "LatoBold",
-    paddingBottom: 10,
+    paddingBottom: 0,
   },
   subtitle: {
     flex: 0.5,
@@ -108,6 +113,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   buttonsSideBySide: {
-    flex: 1,
+    flex: 1.3,
   },
 });
