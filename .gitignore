@@ -146,15 +146,15 @@ package-lock.json
 .metro-health-check*
 
 # Unity
-polaris-ar/[Ll]ibrary/
-polaris-ar/[Ll]ogs/
-polaris-ar/[Tt]emp/
-polaris-ar/[Oo]bj/
-polaris-ar/[Bb]uild/
-polaris-ar/[Bb]uilds/
-polaris-ar/[Uu]serSettings/
-polaris-ar/Assets/AssetStoreTools*
-polaris-ar/Packages/packages-lock.json
+/polaris-ar/[Ll]ibrary/
+/polaris-ar/[Ll]ogs/
+/polaris-ar/[Tt]emp/
+/polaris-ar/[Oo]bj/
+/polaris-ar/[Bb]uild/
+/polaris-ar/[Bb]uilds/
+/polaris-ar/[Uu]serSettings/
+/polaris-ar/Assets/AssetStoreTools*
+/polaris-ar/Packages/packages-lock.json
 
 # Visual Studio 2015 cache directory
 /.vs/
