@@ -1,9 +1,15 @@
-import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  KeyboardAvoidingView,
+} from "react-native";
 import colours from "../components/Colours";
 import Button from "../components/Button";
 import InputBoxEmail from "../components/InputBox/InputBoxEmail";
 import InputBoxPass from "../components/InputBox/InputBoxPass";
-import { KeyboardAvoidingView } from "react-native";
 import {
   getAuth,
   signInWithEmailAndPassword,
