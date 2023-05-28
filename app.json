@@ -5,6 +5,12 @@
       "bundler": "metro"
     },
     "name": "Polaris",
-    "slug": "Polaris"
+    "slug": "Polaris",
+    "android": {
+      "package": "com.cliftonchee.Polaris"
+    },
+    "ios": {
+      "bundleIdentifier": "com.cliftonchee.Polaris"
+    }
   }
 }
