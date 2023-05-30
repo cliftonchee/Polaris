@@ -14,6 +14,11 @@ VR Stargazing app using Unity AR Foundation
 <img src='https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=yellow'>
 </p>
 
+## Installation
+
+Fork repo and run 'npm install' on terminal to install dependencies.
+Run 'npm run' and follow accordingly to run on iOS or Android simulator.
+
 ## NUS Orbital Project '23
 
 AY22/23 Summer Project
