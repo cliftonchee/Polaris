@@ -9,6 +9,7 @@
 <img src='https://img.shields.io/badge/-React-61FADB?logo=react&logoColor=white'>
 <img src='https://img.shields.io/badge/-Unity-ffffff?logo=unity&logoColor=black'>
 <img src='https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=orange'>
+<img src='https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=yellow'>
 </p>
 
 NUS Orbital Project '23
