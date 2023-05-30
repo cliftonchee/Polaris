@@ -1,5 +1,8 @@
 # Polaris
 
+![issues](https://img.shields.io/github/issues/cliftonchee/Polaris)
+![pr](https://img.shields.io/github/issues-pr/cliftonchee/Polaris)
+
 NUS Orbital Project '23
 
 AY22/23 Summer Project
