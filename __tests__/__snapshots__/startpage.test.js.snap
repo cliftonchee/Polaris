@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Start page renders correctly 1`] = `
+exports[`<Page /> Start page renders correctly 1`] = `
 <RCTSafeAreaView
   style={
     {
@@ -97,6 +97,7 @@ exports[`Start page renders correctly 1`] = `
             "width": 350,
           }
         }
+        testID="button"
       >
         <Text
           style={
