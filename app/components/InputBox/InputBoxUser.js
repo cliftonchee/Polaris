@@ -8,7 +8,7 @@ const InputBox = ({ initialText, onChangeText }) => {
     <View style={styles.view}>
       <AntDesign name="user" size={20} color="#666" style={styles.icon} />
       <TextInput
-        placeholder={initialText}
+        placeholder="Username"
         placeholderTextColor={colours.gray}
         onChangeText={onChangeText}
         style={styles.text}

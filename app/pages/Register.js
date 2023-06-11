@@ -7,25 +7,40 @@ import InputBoxUser from "../components/InputBox/InputBoxUser";
 import { KeyboardAvoidingView } from "react-native";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
+import ProfilePic from "../components/ProfilePic";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export default function SignUp({ navigation }) {
-  {
-    /* State creation */
-  }
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [usernames, setName] = useState("");
+  const [result, setValue] = useState(null); // State to store the user object
 
-  {
-    /* Method to handle registration */
+  const dbhandling = (value) => {
+    setValue(value);
+  };
+
+  async function updatedb(person) {
+    if (person && usernames) {
+      // Check if person and person.uid are not null
+      await setDoc(doc(db, "ProfilePic", person.uid), {
+        pic: result,
+        username: usernames,
+      });
+    } else {
+      console.log("User ID is null");
+    }
   }
+
   const auth = getAuth();
   const handleRegister = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
-        console.log("Registered with: ", user.email);
+        console.log("Registered with:", user.email);
         navigation.navigate("Login");
+        updatedb(user);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -37,17 +52,28 @@ export default function SignUp({ navigation }) {
   return (
     <KeyboardAvoidingView style={styles.container}>
       {/* Image */}
-      <Image
-        style={styles.image}
-        source={require("../assets/images/polaris-constellation.png")}
-      />
+      <View
+        style={{
+          height: 250,
+          width: 350,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 100,
+        }}
+      >
+        <ProfilePic returnVariable={dbhandling}></ProfilePic>
+      </View>
       {/* Title */}
       <Text style={styles.title}>P O L A R I S</Text>
+
       {/* Login details */}
       <View style={styles.loginDetails}>
         {/* Input Boxes with Text above */}
         {/* Username */}
-        <InputBoxUser initialText="Username"></InputBoxUser>
+        <InputBoxUser
+          value={usernames}
+          onChangeText={(text) => setName(text)}
+        ></InputBoxUser>
 
         {/* Email */}
         <InputBoxEmail
