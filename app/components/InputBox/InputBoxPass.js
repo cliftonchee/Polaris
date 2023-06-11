@@ -18,6 +18,7 @@ const InputBox = ({ onChangeText }) => {
         onChangeText={onChangeText}
         style={styles.text}
         autoCapitalize="none"
+        secureTextEntry={true}
       ></TextInput>
     </View>
   );

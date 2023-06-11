@@ -10,6 +10,7 @@ import {
 import { color } from "react-native-reanimated";
 import axios from "axios";
 import colours from "./Colours";
+import { ScrollView } from "react-native-gesture-handler";
 
 const News = () => {
   const [imageData, setImageData] = useState(null);
@@ -31,7 +32,7 @@ const News = () => {
           "https://api.spaceflightnewsapi.net/v4/articles/",
           {
             params: {
-              limit: 3,
+              limit: 5,
             },
           }
         );
@@ -61,45 +62,78 @@ const News = () => {
         backgroundColor: "rgba(128, 128, 128, 0.1)",
         borderRadius: 20,
         width: 358,
+        height: 170,
       }}
     >
-      <View style={styles.container}>
-        <Pressable onPress={() => handlePress(imageData.results[0].url)}>
-          <Image
-            source={{ uri: imageData.results[0].image_url }}
-            style={styles.image}
-          />
-          {/* Image title for reference */}
-          <Text style={styles.textContainer}>{imageData.results[0].title}</Text>
-        </Pressable>
-      </View>
-
-      <Pressable onPress={() => handlePress(imageData.results[1].url)}>
+      <ScrollView horizontal={true}>
         <View style={styles.container}>
-          <Image
-            source={{ uri: imageData.results[1].image_url }}
-            style={styles.image}
-          />
-          {/* Image title for reference */}
-          <Text style={styles.textContainer}>{imageData.results[1].title}</Text>
-        </View>
-      </Pressable>
-
-      <View style={styles.container}>
-        <Pressable onPress={() => handlePress(imageData.results[2].url)}>
-          <Image
-            source={{ uri: imageData.results[2].image_url }}
-            style={styles.image}
-          />
-
-          <View>
+          <Pressable onPress={() => handlePress(imageData.results[0].url)}>
+            <Image
+              source={{ uri: imageData.results[0].image_url }}
+              style={styles.image}
+            />
             {/* Image title for reference */}
             <Text style={styles.textContainer}>
-              {imageData.results[2].title}
+              {imageData.results[0].title}
             </Text>
-          </View>
-        </Pressable>
-      </View>
+          </Pressable>
+        </View>
+
+        <View style={styles.container}>
+          <Pressable onPress={() => handlePress(imageData.results[1].url)}>
+            <Image
+              source={{ uri: imageData.results[1].image_url }}
+              style={styles.image}
+            />
+            {/* Image title for reference */}
+            <Text style={styles.textContainer}>
+              {imageData.results[1].title}
+            </Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.container}>
+          <Pressable onPress={() => handlePress(imageData.results[2].url)}>
+            <Image
+              source={{ uri: imageData.results[2].image_url }}
+              style={styles.image}
+            />
+
+            <View>
+              {/* Image title for reference */}
+              <Text style={styles.textContainer}>
+                {imageData.results[2].title}
+              </Text>
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={styles.container}>
+          <Pressable onPress={() => handlePress(imageData.results[3].url)}>
+            <Image
+              source={{ uri: imageData.results[3].image_url }}
+              style={styles.image}
+            />
+            {/* Image title for reference */}
+            <Text style={styles.textContainer}>
+              {imageData.results[3].title}
+            </Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.container}>
+          <Pressable onPress={() => handlePress(imageData.results[4].url)}>
+            <Image
+              source={{ uri: imageData.results[4].image_url }}
+              style={styles.image}
+            />
+            {/* Image title for reference */}
+            <Text style={styles.textContainer}>
+              {imageData.results[4].title}
+            </Text>
+          </Pressable>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -108,23 +142,21 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 20,
-    overflow: "hidden",
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 5,
     marginTop: 5,
+    width: 200,
   },
   image: {
-    width: 350,
+    width: 200,
     height: 75,
-    paddingBottom: 10,
   },
   textContainer: {
     color: colours.white,
     backgroundColor: colours.black,
-    height: 40,
-    width: 350,
+    height: 70,
+    width: 200,
     textAlign: "center",
     fontFamily: "LatoBold",
     paddingBottom: 5,
