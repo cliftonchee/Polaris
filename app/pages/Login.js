@@ -56,7 +56,7 @@ export default function Login({ navigation }) {
       />
 
       {/* Title */}
-      <Text style={styles.title}>P O L A R I S</Text>
+      <Text testID="loginTitle" style={styles.title}>P O L A R I S</Text>
 
       {/* Login details */}
       <View style={styles.loginDetails}>

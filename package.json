@@ -3,7 +3,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "jest"
   },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
@@ -29,11 +30,15 @@
     "react-native-screens": "~3.20.0",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.7",
+    "react-test-renderer": "^18.2.0"
     "expo-image-picker": "~14.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@babel/plugin-proposal-export-namespace-from": "^7.18.9"
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@babel/preset-env": "^7.22.4",
+    "@testing-library/react-native": "^12.1.2",
+    "@types/jest": "^29.5.2"
   },
   "resolutions": {
     "metro": "^0.73.7",

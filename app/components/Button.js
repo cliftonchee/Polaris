@@ -14,6 +14,7 @@ const Button = ({ styleOverride, onPress, textOverride, title }) => {
         // (can refer to StartPage for an example)
         style={[styles.button, styleOverride]}
         onPress={onPress}
+        testID="button"
       >
         <Text style={[styles.buttonText, textOverride]}>{title}</Text>
       </TouchableOpacity>
