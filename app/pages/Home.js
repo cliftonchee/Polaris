@@ -19,11 +19,11 @@ import Profile from "../components/Profile";
 export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ marginLeft: 15 }}>
+      <View style={{ marginLeft: 17, paddingTop: 10 }}>
         <Profile></Profile>
       </View>
 
-      <View>
+      <View style={{ paddingTop: 30 }}>
         <Text style={styles.newsText}> Latest News </Text>
       </View>
 
@@ -32,7 +32,7 @@ export default function Home({ navigation }) {
         <News />
       </View>
 
-      <View style={{ paddingLeft: 6 }}>
+      <View style={{ paddingLeft: 6, paddingTop: 30 }}>
         <Text style={styles.newsText}>Astronomy Picture of the day</Text>
       </View>
 
@@ -72,7 +72,6 @@ export default function Home({ navigation }) {
             // source={{ uri: 'https://example.com/path/to/your/image.png' }}
           />
         </View>
-
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
@@ -125,7 +124,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 20,
+    paddingTop: 50,
   },
   buttonContainer: {
     position: "relative",
