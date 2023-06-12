@@ -2,9 +2,23 @@
   "expo": {
     "scheme": "acme",
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "plugins": [
+        [
+          "expo-image-picker",
+          {
+            "photosPermission": "The app accesses your photos to let you share them with your friends."
+          }
+        ]
+      ]
     },
     "name": "Polaris",
-    "slug": "Polaris"
+    "slug": "Polaris",
+    "android": {
+      "package": "com.cliftonchee.Polaris"
+    },
+    "ios": {
+      "bundleIdentifier": "com.cliftonchee.Polaris"
+    }
   }
 }

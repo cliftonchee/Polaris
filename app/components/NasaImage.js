@@ -39,7 +39,7 @@ const NasaImage = () => {
     <View>
       <Image
         source={{ uri: imageData.url }}
-        style={{ width: 350, height: 125, paddingBottom: 10, borderRadius: 10 }}
+        style={{ width: 350, height: 200, paddingBottom: 10, borderRadius: 10 }}
       />
       {/* Image title for reference */}
       {/* <Text style={{ color: colours.white, justifyContent: "flex-end" }}>
