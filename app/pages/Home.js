@@ -47,11 +47,44 @@ export default function Home({ navigation }) {
 
       {/* Customisable Button */}
       <View style={styles.button}>
-        <Button
-          styleOverride={styles.buttonLayout}
-          onPress={() => navigation.navigate("Login")}
-          title="HOME"
-        ></Button>
+        <View style={styles.buttonContainer}>
+          <Button
+            styleOverride={styles.buttonLayout}
+            onPress={() => navigation.navigate("Login")}
+          />
+          <Image
+            style={styles.overlayImage}
+            source={require("../assets/images/chat.png")}
+            // You can also use a network image by providing a URI
+            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+          />
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <Button
+            styleOverride={styles.buttonLayout}
+            onPress={() => navigation.navigate("Login")}
+          />
+          <Image
+            style={styles.overlayImage}
+            source={require("../assets/images/telescope.png")}
+            // You can also use a network image by providing a URI
+            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+          />
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <Button
+            styleOverride={styles.buttonLayout}
+            onPress={() => navigation.navigate("Login")}
+          />
+          <Image
+            style={styles.overlayImage}
+            source={require("../assets/images/loupe.png")}
+            // You can also use a network image by providing a URI
+            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -83,11 +116,27 @@ const styles = StyleSheet.create({
   },
   buttonLayout: {
     // Added on top of original button
-    borderRadius: 30,
-    width: 350,
-    height: 100,
+    borderRadius: 20,
+    width: 110,
+    height: 70,
+    backgroundColor: colours.test,
   },
   button: {
-    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: 20,
+  },
+  buttonContainer: {
+    position: "relative",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  overlayImage: {
+    position: "absolute",
+    zIndex: 1, // Ensure the overlay image is rendered above the button
+    // Add any desired styles for the overlay image here
+    width: 35,
+    height: 35,
   },
 });
