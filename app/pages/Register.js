@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import ProfilePic from "../components/ProfilePic";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import useStore from "../../store/store";
 
 export default function SignUp({ navigation }) {
   const [email, setEmail] = useState("");

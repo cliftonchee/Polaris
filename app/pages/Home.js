@@ -13,10 +13,14 @@ import Button from "../components/Button";
 import NasaImage from "../components/NasaImage";
 import News from "../components/News";
 import Profile from "../components/Profile";
+import useStore from "../../store/store";
 
 // To navigate between screens, add '{ navigation }'
 // as an argument, and under onPress, refer to below
+
 export default function Home({ navigation }) {
+  /*Use this to reference user*/
+  const userCurrent = useStore((state) => state.user);
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ marginLeft: 17, paddingTop: 10 }}>
@@ -25,6 +29,7 @@ export default function Home({ navigation }) {
 
       <View style={{ paddingTop: 30 }}>
         <Text style={styles.newsText}> Latest News </Text>
+        <Text style={styles.newsText}> {userCurrent.uid} </Text>
       </View>
 
       {/* Latest News */}
@@ -50,7 +55,7 @@ export default function Home({ navigation }) {
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("Forum")}
           />
           <Image
             style={styles.overlayImage}
