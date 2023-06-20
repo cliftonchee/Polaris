@@ -4,7 +4,7 @@ import Button from "../components/Button";
 
 // To navigate between screens, add '{ navigation }'
 // as an argument, and under onPress, refer to below
-const Profile = ({ navigation }) => {
+const Profile = ({ navigation, name }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -22,7 +22,7 @@ const Profile = ({ navigation }) => {
             source={require("../assets/images/profile-user.png")}
           />
           {/* Title */}
-          <Text style={styles.title}>Welcome User</Text>
+          <Text style={styles.title}>Welcome {name}</Text>
         </View>
       </View>
     </SafeAreaView>

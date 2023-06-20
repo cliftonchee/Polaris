@@ -19,7 +19,9 @@ export default function SignUp({ navigation }) {
   const [result, setValue] = useState(null); // State to store the user object
 
   const dbhandling = (value) => {
-    setValue(value);
+    const urlParts = value.split("/");
+    const imageFileName = urlParts[urlParts.length - 1];
+    setValue(imageFileName);
   };
 
   async function updatedb(person) {
