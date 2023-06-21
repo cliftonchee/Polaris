@@ -13,17 +13,38 @@ import Button from "../components/Button";
 import NasaImage from "../components/NasaImage";
 import News from "../components/News";
 import Profile from "../components/Profile";
+import useStore from "../../store/store";
+import { useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase";
 
 // To navigate between screens, add '{ navigation }'
 // as an argument, and under onPress, refer to below
+
 export default function Home({ navigation }) {
+  /*Use this to reference user*/
+  const userCurrent = useStore((state) => state.user);
+  const [name1, setName] = useState("");
+  const [pic, setPic] = useState("");
+  const userID = userCurrent.uid;
+  const ref = doc(db, "ProfilePic", userID);
+
+  const getName = async () => {
+    const docSnap = await getDoc(ref);
+    setName(docSnap.data().username);
+    setPic(docSnap.data().pic);
+  };
+
+  getName();
+  console.log(name1);
+
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ marginLeft: 15 }}>
-        <Profile></Profile>
+      <View style={{ marginLeft: 17, paddingTop: 10 }}>
+        <Profile name={name1}></Profile>
       </View>
 
-      <View>
+      <View style={{ paddingTop: 30 }}>
         <Text style={styles.newsText}> Latest News </Text>
       </View>
 
@@ -32,11 +53,13 @@ export default function Home({ navigation }) {
         <News />
       </View>
 
-      <View style={{ paddingLeft: 6 }}>
+      <View style={{ paddingLeft: 6, paddingTop: 30 }}>
         <Text style={styles.newsText}>Astronomy Picture of the day</Text>
       </View>
 
-      <View style={{ alignItems: "center" }}>
+      <View
+        style={{ alignItems: "center", height: 200, justifyContent: "center" }}
+      >
         <Pressable onPress={() => navigation.navigate("Login")}>
           {/* NASA Image of the day */}
           <View style={styles.imageContainer}>
@@ -50,7 +73,7 @@ export default function Home({ navigation }) {
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("Forum")}
           />
           <Image
             style={styles.overlayImage}
@@ -72,11 +95,10 @@ export default function Home({ navigation }) {
             // source={{ uri: 'https://example.com/path/to/your/image.png' }}
           />
         </View>
-
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("Encyclopedia")}
           />
           <Image
             style={styles.overlayImage}
@@ -125,7 +147,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 20,
+    paddingTop: 50,
   },
   buttonContainer: {
     position: "relative",
