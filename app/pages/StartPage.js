@@ -70,7 +70,7 @@ import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
 import { View } from 'react-native';
 
-const Unity = () => {
+const AR = () => {
   const unityRef = useRef(null);
 
   useEffect(() => {
@@ -97,4 +97,4 @@ const Unity = () => {
   );
 };
 
-export default Unity;
+export default AR;
