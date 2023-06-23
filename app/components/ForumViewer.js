@@ -12,6 +12,7 @@ import useStore from "../../store/store";
 import { useRoute } from "@react-navigation/native";
 import Button from "../components/Button";
 import { useNavigation } from "expo-router";
+import Chat from "./Chat";
 
 const ForumViewer = () => {
   const [desc, setDes] = useState(null);
@@ -66,6 +67,7 @@ const ForumViewer = () => {
         </ScrollView>
         <Text style={styles.subtitle1}>Chat</Text>
       </View>
+      <Chat info={info} style={{ marginBottom: 20 }}></Chat>
     </KeyboardAvoidingView>
   );
 };
@@ -109,9 +111,10 @@ const styles = StyleSheet.create({
   subtitle1: {
     paddingLeft: 5,
     paddingRight: 0,
-    fontSize: 20,
+    paddingBottom: 10,
+    fontSize: 30,
     color: colours.white,
-    fontFamily: "LatoRegular",
+    fontFamily: "LatoBold",
     paddingTop: 30,
   },
   subheader: {
