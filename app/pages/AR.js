@@ -1,32 +1,32 @@
-// import React, { useRef, useEffect } from 'react';
-// import UnityView from '@azesmway/react-native-unity';
-// import { View } from 'react-native';
+import React, { useRef, useEffect } from 'react';
+import UnityView from '@azesmway/react-native-unity';
+import { View } from 'react-native';
 
-// const AR = () => {
-//   const unityRef = useRef(null);
+const AR = () => {
+  const unityRef = useRef(null);
 
-//   useEffect(() => {
-//     if (unityRef.current) {
-//       const message = {
-//         gameObject: 'gameObject',
-//         methodName: 'methodName',
-//         message: 'message',
-//       };
-//       unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
-//     }
-//   }, []);
+  useEffect(() => {
+    if (unityRef.current) {
+      const message = {
+        gameObject: 'gameObject',
+        methodName: 'methodName',
+        message: 'message',
+      };
+      unityRef.current.postMessage(message.gameObject, message.methodName, message.message);
+    }
+  }, []);
 
-//   return (
-//     <View style={{ flex: 1 }}>
-//       <UnityView
-//         ref={unityRef}
-//         style={{ flex: 1 }}
-//         onUnityMessage={(result) => {
-//           console.log('onUnityMessage', result.nativeEvent.message);
-//         }}
-//       />
-//     </View>
-//   );
-// };
+  return (
+    <View style={{ flex: 1 }}>
+      <UnityView
+        ref={unityRef}
+        style={{ flex: 1 }}
+        onUnityMessage={(result) => {
+          console.log('onUnityMessage', result.nativeEvent.message);
+        }}
+      />
+    </View>
+  );
+};
 
-// export default AR;
+export default AR;

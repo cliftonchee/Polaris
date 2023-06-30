@@ -326,8 +326,6 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-splash-screen (3.3.0):
-    - React-Core
   - react-native-unity (0.3.1):
     - React-Core
   - React-perflogger (0.71.8)
@@ -492,7 +490,6 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
-  - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - "react-native-unity (from `../node_modules/@azesmway/react-native-unity`)"
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -595,8 +592,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-image-picker"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
-  react-native-splash-screen:
-    :path: "../node_modules/react-native-splash-screen"
   react-native-unity:
     :path: "../node_modules/@azesmway/react-native-unity"
   React-perflogger:
@@ -685,7 +680,6 @@ SPEC CHECKSUMS:
   React-logger: 342f358b8decfbf8f272367f4eacf4b6154061be
   react-native-image-picker: 709d04e7df67bd3a90f376c3eedb2e8b8334dd04
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
-  react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-unity: 40135ec290f473bba9094d0352544085cdc99598
   React-perflogger: d21f182895de9d1b077f8a3cd00011095c8c9100
   React-RCTActionSheet: 0151f83ef92d2a7139bba7dfdbc8066632a6d47b

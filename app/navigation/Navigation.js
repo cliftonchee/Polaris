@@ -11,6 +11,7 @@ import StartPage from "../pages/StartPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
+import AR from "../pages/AR";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ export default function Navigation() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="AR" component={AR} />
     </Stack.Navigator>
     //</NavigationContainer>
   );

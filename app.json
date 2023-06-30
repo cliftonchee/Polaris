@@ -12,6 +12,9 @@
         ]
       ]
     },
+    "splash": {
+      "image": "./app/assets/images/splash_screens/splash.png"
+    },
     "name": "Polaris",
     "slug": "Polaris",
     "android": {
@@ -29,6 +32,11 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "82301719-c33f-4139-b161-224ca1058f36"
+      }
+    }
   }
 }
