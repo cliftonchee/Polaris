@@ -22,7 +22,7 @@ export default function StartPage({ navigation }) {
         <Button
           styleOverride={styles.buttonLayout}
           // Navigation to Login page
-          onPress={() => navigation.navigate("AR")}
+          onPress={() => navigation.navigate("Login")}
           title="Get started"
         ></Button>
       </View>

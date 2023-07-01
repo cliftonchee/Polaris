@@ -86,7 +86,7 @@ export default function Home({ navigation }) {
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => navigation.navigate("AR")}
           />
           <Image
             style={styles.overlayImage}
