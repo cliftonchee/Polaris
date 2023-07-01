@@ -15,6 +15,7 @@ import Encyclopedia from "../pages/Encylopedia";
 import PlanetData from "../pages/PlanetData";
 import Forum from "../pages/Forum";
 import ForumViewer from "../components/ForumViewer";
+import AR from "../pages/AR";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ export default function Navigation() {
       <Stack.Screen name="PlanetData" component={PlanetData} />
       <Stack.Screen name="Forum" component={Forum} />
       <Stack.Screen name="ForumViewer" component={ForumViewer} />
+      <Stack.Screen name="AR" component={AR} />
     </Stack.Navigator>
     //</NavigationContainer>
   );
