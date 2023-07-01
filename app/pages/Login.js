@@ -16,35 +16,38 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import React, { useEffect, useState } from "react";
+import useStore from "../../store/store";
 
-export default function Login({ navigation }) {
+const Login = ({ navigation }) => {
   {
     /* State creation */
   }
+  const setUser = useStore((state) => state.setUser);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const auth = getAuth();
 
   {
     /* Method to handle Login */
   }
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log("Logged in with: ", user.email);
-
-        {
-          /* Navigation if successful */
-        }
-        navigation.navigate("Home");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
+    if (email !== "" && password !== "") {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log("Logged in with: ", user.email);
+          setUser(user);
+          {
+            /* Navigation if successful */
+          }
+          navigation.navigate("Home");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }
   };
 
   return (
@@ -56,7 +59,9 @@ export default function Login({ navigation }) {
       />
 
       {/* Title */}
-      <Text testID="loginTitle" style={styles.title}>P O L A R I S</Text>
+      <Text testID="loginTitle" style={styles.title}>
+        P O L A R I S
+      </Text>
 
       {/* Login details */}
       <View style={styles.loginDetails}>
@@ -95,7 +100,9 @@ export default function Login({ navigation }) {
       </View>
     </KeyboardAvoidingView>
   );
-}
+};
+
+export default Login;
 
 const styles = StyleSheet.create({
   container: {

@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import ProfilePic from "../components/ProfilePic";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import useStore from "../../store/store";
 
 export default function SignUp({ navigation }) {
   const [email, setEmail] = useState("");
@@ -18,7 +19,9 @@ export default function SignUp({ navigation }) {
   const [result, setValue] = useState(null); // State to store the user object
 
   const dbhandling = (value) => {
-    setValue(value);
+    const urlParts = value.split("/");
+    const imageFileName = urlParts[urlParts.length - 1];
+    setValue(imageFileName);
   };
 
   async function updatedb(person) {
