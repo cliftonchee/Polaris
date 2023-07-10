@@ -15,7 +15,7 @@ export const firebaseConfig = {
   projectId: "polaris-7faa8",
   storageBucket: "polaris-7faa8.appspot.com",
   messagingSenderId: "623742386593",
-  appId: "1:623742386593:web:197501e9888902f6080be0",
+  appId: "1:623742386593:ios:fa34eef82e5ba519080be0",
   measurementId: "G-V22S62J66T",
 };
 
