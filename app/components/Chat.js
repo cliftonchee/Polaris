@@ -19,12 +19,17 @@ import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import Colours from "./Colours";
 import useStore from "../../store/store";
+import { KeyboardAvoidingView } from "react-native";
+import { useHeaderHeight } from "@react-navigation/elements";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Chat({ info }) {
   const [messages, setMessages] = useState([]);
   const navigation = useNavigation();
   const userCurrent = useStore((state) => state.user);
   const userID = userCurrent.uid;
+  const height = useHeaderHeight();
+  const insets = useSafeAreaInsets();
 
   console.log(userID);
 
@@ -87,29 +92,33 @@ export default function Chat({ info }) {
   }, []);
 
   return (
-    <GiftedChat
-      messages={messages}
-      showAvatarForEveryMessage={false}
-      showUserAvatar={false}
-      onSend={(messages) => onSend(messages)}
-      messagesContainerStyle={{
-        backgroundColor: "rgba(180, 180, 180, 0.1)",
-        width: 355,
-        height: 220,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-      }}
-      textInputStyle={{
-        backgroundColor: Colours.white,
-        borderRadius: 20,
-        height: 10,
-        marginBottom: 20,
-      }}
-      bottomOffset={1000}
-      user={{
-        _id: userID,
-        avatar: "https://i.pravatar.cc/300",
-      }}
-    />
+    <KeyboardAvoidingView
+      keyboardVerticalOffset={height}
+      behavior="padding"
+      style={{ flex: 0.8 }}
+      enabled
+    >
+      <GiftedChat
+        messages={messages}
+        showAvatarForEveryMessage={false}
+        showUserAvatar={false}
+        onSend={(messages) => onSend(messages)}
+        messagesContainerStyle={{
+          backgroundColor: "rgba(180, 180, 180, 0.1)",
+          width: 355,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+        }}
+        textInputStyle={{
+          backgroundColor: Colours.white,
+        }}
+        user={{
+          _id: userID,
+          avatar: "https://i.pravatar.cc/300",
+        }}
+        bottomOffset={insets.bottom}
+        wrapInSafeArea={false}
+      />
+    </KeyboardAvoidingView>
   );
 }

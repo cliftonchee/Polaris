@@ -15,6 +15,7 @@ import Encyclopedia from "../pages/Encylopedia";
 import PlanetData from "../pages/PlanetData";
 import Forum from "../pages/Forum";
 import ForumViewer from "../components/ForumViewer";
+import ForgetPass from "../pages/ForgetPass";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export default function Navigation() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Start" component={StartPage} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="ForgetPass" component={ForgetPass} />
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Encyclopedia" component={Encyclopedia} />

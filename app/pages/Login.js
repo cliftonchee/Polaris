@@ -10,6 +10,7 @@ import colours from "../components/Colours";
 import Button from "../components/Button";
 import InputBoxEmail from "../components/InputBox/InputBoxEmail";
 import InputBoxPass from "../components/InputBox/InputBoxPass";
+import { useHeaderHeight } from "@react-navigation/elements";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -19,86 +20,79 @@ import React, { useEffect, useState } from "react";
 import useStore from "../../store/store";
 
 const Login = ({ navigation }) => {
-  {
-    /* State creation */
-  }
   const setUser = useStore((state) => state.setUser);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth();
+  const height = useHeaderHeight();
 
-  {
-    /* Method to handle Login */
-  }
   const handleLogin = () => {
     if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Signed in
           const user = userCredential.user;
-          console.log("Logged in with: ", user.email);
           setUser(user);
-          {
-            /* Navigation if successful */
-          }
           navigation.navigate("Home");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          setErrorMessage("Invalid email or password");
+
+          // Clear error message after 3 seconds
+          setTimeout(() => {
+            setErrorMessage("");
+          }, 3000);
         });
     }
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
-      {/* Image */}
+    <View style={styles.container}>
       <Image
         style={styles.image}
         source={require("../assets/images/polaris-constellation.png")}
       />
-
-      {/* Title */}
       <Text testID="loginTitle" style={styles.title}>
         P O L A R I S
       </Text>
-
-      {/* Login details */}
-      <View style={styles.loginDetails}>
-        {/* Input Boxes with Text above */}
-        {/* Email */}
-        <InputBoxEmail
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-        ></InputBoxEmail>
-
-        {/* Password */}
-        <InputBoxPass
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-        >
-          secureTex
-        </InputBoxPass>
-
-        {/* Forgot Password */}
-        <Button // TODO: Add onPress
-          styleOverride={styles.forgotPassword}
-          title="Forgot Password"
-          textOverride={styles.forgotPasswordText}
-        ></Button>
-      </View>
-
-      {/* Customisable Buttons */}
+      <KeyboardAvoidingView
+        keyboardVerticalOffset={height}
+        behavior="padding"
+        style={{ flex: 1 }}
+        enabled
+      >
+        <View style={styles.loginDetails}>
+          <InputBoxEmail
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+          />
+          <InputBoxPass
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+          >
+            secureText
+          </InputBoxPass>
+          <Button
+            styleOverride={styles.forgotPassword}
+            title="Forgot Password"
+            textOverride={styles.forgotPasswordText}
+            onPress={() => navigation.navigate("ForgetPass")}
+          />
+          {errorMessage !== "" && (
+            <Text style={styles.errorMessage}>{errorMessage}</Text>
+          )}
+        </View>
+      </KeyboardAvoidingView>
       <View style={styles.buttonsSideBySide}>
-        {/* TODO: Add onPress to new pages */}
         <Button
           title="Register"
           onPress={() => navigation.navigate("Register")}
-        ></Button>
-
-        <Button title="Sign In" onPress={handleLogin}></Button>
+        />
+        <Button title="Sign In" onPress={handleLogin} />
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
@@ -106,7 +100,6 @@ export default Login;
 
 const styles = StyleSheet.create({
   container: {
-    // Background
     flex: 1,
     alignItems: "center",
     backgroundColor: colours.primary,
@@ -132,21 +125,27 @@ const styles = StyleSheet.create({
   },
   loginDetails: {
     flex: 1,
+    justifyContent: "center",
   },
   forgotPassword: {
-    flex: 0.33,
     fontSize: 10,
-    color: colours.gray,
+    height: 15,
+    paddingRight: 3,
     backgroundColor: colours.primary,
-    height: 0,
-    width: 100,
-    marginLeft: -10,
+    color: colours.gray,
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   forgotPasswordText: {
     fontSize: 10,
     color: colours.gray,
   },
   buttonsSideBySide: {
-    flex: 2,
+    flex: 1.7,
+  },
+  errorMessage: {
+    color: "red",
+    textAlign: "center",
+    marginTop: 10,
   },
 });
