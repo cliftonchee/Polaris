@@ -5,6 +5,7 @@ import InputBoxEmail from "../components/InputBox/InputBoxEmail";
 import InputBoxPass from "../components/InputBox/InputBoxPass";
 import InputBoxUser from "../components/InputBox/InputBoxUser";
 import { KeyboardAvoidingView } from "react-native";
+import { useHeaderHeight } from "@react-navigation/elements";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import ProfilePic from "../components/ProfilePic";
@@ -35,6 +36,7 @@ export default function SignUp({ navigation }) {
       console.log("User ID is null");
     }
   }
+  const height = useHeaderHeight();
 
   const auth = getAuth();
   const handleRegister = () => {
@@ -53,7 +55,7 @@ export default function SignUp({ navigation }) {
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container}>
       {/* Image */}
       <View
         style={{
@@ -68,31 +70,36 @@ export default function SignUp({ navigation }) {
       </View>
       {/* Title */}
       <Text style={styles.title}>P O L A R I S</Text>
+      <KeyboardAvoidingView
+        keyboardVerticalOffset={height + 100}
+        behavior="padding"
+        style={{ flex: 1 }}
+        enabled
+      >
+        {/* Login details */}
+        <View style={styles.loginDetails}>
+          {/* Input Boxes with Text above */}
+          {/* Username */}
+          <InputBoxUser
+            value={usernames}
+            onChangeText={(text) => setName(text)}
+          ></InputBoxUser>
 
-      {/* Login details */}
-      <View style={styles.loginDetails}>
-        {/* Input Boxes with Text above */}
-        {/* Username */}
-        <InputBoxUser
-          value={usernames}
-          onChangeText={(text) => setName(text)}
-        ></InputBoxUser>
+          {/* Email */}
+          <InputBoxEmail
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+          ></InputBoxEmail>
 
-        {/* Email */}
-        <InputBoxEmail
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-        ></InputBoxEmail>
-
-        {/* Password */}
-        <InputBoxPass
-          value={password}
-          onChangeText={(text) => setPassword(text)}
-        >
-          secureTex
-        </InputBoxPass>
-      </View>
-
+          {/* Password */}
+          <InputBoxPass
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+          >
+            secureTex
+          </InputBoxPass>
+        </View>
+      </KeyboardAvoidingView>
       {/* Customisable Buttons */}
       <View style={styles.buttonsSideBySide}>
         {/* TODO: Add onPress to new pages */}
@@ -107,7 +114,7 @@ export default function SignUp({ navigation }) {
           title="Go Back"
         ></Button>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 

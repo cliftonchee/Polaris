@@ -13,6 +13,7 @@ import { useRoute } from "@react-navigation/native";
 import Button from "../components/Button";
 import { useNavigation } from "expo-router";
 import Chat from "./Chat";
+import { useHeaderHeight } from "@react-navigation/elements";
 
 const ForumViewer = () => {
   const [desc, setDes] = useState(null);
@@ -20,6 +21,7 @@ const ForumViewer = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { info } = route.params;
+  const height = useHeaderHeight();
 
   useEffect(() => {
     try {
@@ -35,39 +37,46 @@ const ForumViewer = () => {
   };
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <View style={styles.button}>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={navigateToForum}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/left-arrow.png")}
-          />
-        </View>
-      </View>
-
-      <View style={{ alignItems: "center" }}>
-        <Text style={styles.title}>{name}</Text>
-        <ScrollView style={{ maxHeight: 175 }}>
-          <View
-            style={{
-              backgroundColor: "rgba(128, 128, 128, 0.1)",
-              borderRadius: 20,
-              width: 358,
-              justifyContent: "center",
-            }}
-          >
-            <ScrollView contentContainerStyle={{ padding: 10 }}>
-              <Text style={styles.subtitle}>{desc}</Text>
-            </ScrollView>
+    <KeyboardAvoidingView
+      keyboardVerticalOffset={height}
+      behavior="padding"
+      style={{ flex: 1 }}
+      enabled
+    >
+      <View style={styles.container} behavior="padding">
+        <View style={styles.button}>
+          <View style={styles.buttonContainer}>
+            <Button
+              styleOverride={styles.buttonLayout}
+              onPress={navigateToForum}
+            />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/left-arrow.png")}
+            />
           </View>
-        </ScrollView>
-        <Text style={styles.subtitle1}>Chat</Text>
+        </View>
+
+        <View style={{ alignItems: "center" }}>
+          <Text style={styles.title}>{name}</Text>
+          <ScrollView style={{ maxHeight: 175 }}>
+            <View
+              style={{
+                backgroundColor: "rgba(128, 128, 128, 0.1)",
+                borderRadius: 20,
+                width: 358,
+                justifyContent: "center",
+              }}
+            >
+              <ScrollView contentContainerStyle={{ padding: 10 }}>
+                <Text style={styles.subtitle}>{desc}</Text>
+              </ScrollView>
+            </View>
+          </ScrollView>
+          <Text style={styles.subtitle1}>Chat</Text>
+        </View>
+        <Chat info={info}></Chat>
       </View>
-      <Chat info={info} style={{ marginBottom: 20 }}></Chat>
     </KeyboardAvoidingView>
   );
 };
