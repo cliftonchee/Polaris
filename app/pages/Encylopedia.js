@@ -57,7 +57,7 @@ const Encyclopedia = () => {
     }
   }, [data]);
 
-  /* Repeated component stored in an array*/
+  /* Repeated component stored in an array */
   const len = data.length;
   console.log(len);
   const planetArr = data
