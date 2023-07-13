@@ -60,11 +60,7 @@ public class HorizonAPIRequest : MonoBehaviour
                 // Set coordinates of planets
                 Transform planetPos = planets[i].transform;
                 planetPos.position =  planetsData[i].scaleDown();
-                // Edge case for Moon, as it's too close scaled down
-                // if (i == 4) {
-                //     planetPos.position = new Vector3(planetPos.position.x * 100, 
-                //                             planetPos.position.y * 100, planetPos.position.z * 100);
-                // }
+
                 // Realign to Unity's coordinate system from IAU convention
                 planetPos.position = new Vector3(-planetPos.position.z, planetPos.position.y, planetPos.position.x);
             }

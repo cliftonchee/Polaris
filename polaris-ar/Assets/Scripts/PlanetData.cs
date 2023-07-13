@@ -28,12 +28,4 @@ public class PlanetData
         // Scales down by 10^6
         return new Vector3(-this.z / 1000000f, this.y / 1000000f, this.x / 1000000f);
     }
-
-    public string getName() {
-        return this.Name;
-    }
-
-    public float getX() {
-        return this.x;
-    }
 }
