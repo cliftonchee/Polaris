@@ -22,10 +22,6 @@ const Forum = () => {
   const [eventArr, setEventArr] = useState(null);
   const navigation = useNavigation();
 
-  const navigateToHome = () => {
-    navigation.navigate("Home");
-  };
-
   var currentTime = new Date();
   var year = currentTime.getFullYear().toString();
 
@@ -84,7 +80,7 @@ const Forum = () => {
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
-            onPress={navigateToHome}
+            onPress={navigation.goBack()}
           />
           <Image
             style={styles.overlayImage}

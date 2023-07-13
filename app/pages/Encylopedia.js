@@ -28,10 +28,6 @@ const Encyclopedia = () => {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
 
-  const navigateToHome = () => {
-    navigation.navigate("Home");
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -71,7 +67,7 @@ const Encyclopedia = () => {
         <View style={styles.buttonContainer}>
           <Button
             styleOverride={styles.buttonLayout}
-            onPress={navigateToHome}
+            onPress={navigation.goBack()}
           />
           <Image
             style={styles.overlayImage}
