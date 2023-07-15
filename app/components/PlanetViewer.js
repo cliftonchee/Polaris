@@ -4,6 +4,7 @@ import axios from "axios";
 import colours from "./Colours";
 import { useNavigation } from "expo-router";
 import PlanetData from "../pages/PlanetData";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const PlanetViewer = ({ info }) => {
   const [imageData, setImageData] = useState(null);
@@ -20,15 +21,17 @@ const PlanetViewer = ({ info }) => {
 
   return (
     <View style={{ alignItems: "center" }}>
-      <Pressable onPress={navigateToPlanetData}>
-        <View style={{ alignItems: "center", paddingBottom: 30 }}>
-          <Image
-            source={{ uri: imageData }}
-            style={{ width: 200, height: 200 }}
-          />
-          <Text style={styles.subtitle}>{info.planet}</Text>
-        </View>
-      </Pressable>
+      <TouchableOpacity onPress={navigateToPlanetData}>
+        <Pressable>
+          <View style={{ alignItems: "center", paddingBottom: 30 }}>
+            <Image
+              source={{ uri: imageData }}
+              style={{ width: 200, height: 200 }}
+            />
+            <Text style={styles.subtitle}>{info.planet}</Text>
+          </View>
+        </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

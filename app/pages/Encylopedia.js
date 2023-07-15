@@ -8,11 +8,9 @@ import {
   ScrollView,
   ActivityIndicator,
 } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import React from "react";
-import InputBoxEmail from "../components/InputBox/InputBoxEmail";
-import InputBoxPass from "../components/InputBox/InputBoxPass";
 import colours from "../components/Colours";
-import useStore from "../../store/store";
 import { doc, getDocs, collection, query, limit } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect, useState } from "react";
@@ -23,8 +21,6 @@ import Button from "../components/Button";
 const Encyclopedia = () => {
   /* array of planets*/
   const [data, setData] = useState([]);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -67,18 +63,17 @@ const Encyclopedia = () => {
   return (
     <KeyboardAvoidingView style={styles.container}>
       {/* Title */}
-      <View style={styles.button}>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={navigateToHome}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/left-arrow.png")}
-          />
+      <TouchableOpacity onPress={navigateToHome}>
+        <View style={styles.button}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/left-arrow.png")}
+            />
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
       <Text testID="loginTitle" style={styles.title}>
         Planets
       </Text>
