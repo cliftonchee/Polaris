@@ -14,6 +14,7 @@ import Button from "../components/Button";
 import { useNavigation } from "expo-router";
 import Chat from "./Chat";
 import { useHeaderHeight } from "@react-navigation/elements";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ForumViewer = () => {
   const [desc, setDes] = useState(null);
@@ -44,21 +45,22 @@ const ForumViewer = () => {
       enabled
     >
       <View style={styles.container} behavior="padding">
-        <View style={styles.button}>
-          <View style={styles.buttonContainer}>
-            <Button
-              styleOverride={styles.buttonLayout}
-              onPress={navigateToForum}
-            />
-            <Image
-              style={styles.overlayImage}
-              source={require("../assets/images/left-arrow.png")}
-            />
+        <TouchableOpacity onPress={navigateToForum}>
+          <View style={styles.button}>
+            <View style={styles.buttonContainer}>
+              <Button styleOverride={styles.buttonLayout} />
+              <Image
+                style={styles.overlayImage}
+                source={require("../assets/images/left-arrow.png")}
+              />
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
         <View style={{ alignItems: "center" }}>
-          <Text style={styles.title}>{name}</Text>
+          <View style={{ marginLeft: 15, marginRight: 15 }}>
+            <Text style={styles.title}>{name}</Text>
+          </View>
           <ScrollView style={{ maxHeight: 175 }}>
             <View
               style={{
@@ -73,9 +75,13 @@ const ForumViewer = () => {
               </ScrollView>
             </View>
           </ScrollView>
-          <Text style={styles.subtitle1}>Chat</Text>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.subtitle1}>Chat</Text>
+            <View style={{ maxHeight: 400 }}>
+              <Chat info={info}></Chat>
+            </View>
+          </View>
         </View>
-        <Chat info={info}></Chat>
       </View>
     </KeyboardAvoidingView>
   );
@@ -104,7 +110,7 @@ const styles = StyleSheet.create({
   },
   title: {
     alignItems: "center",
-    fontSize: 45,
+    fontSize: 35,
     color: colours.white,
     fontFamily: "LatoBold",
     marginTop: 5,

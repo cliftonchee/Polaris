@@ -14,6 +14,7 @@ import Button from "../components/Button";
 import axios from "axios";
 import ActivityViewer from "./ActivityViewer";
 import { useNavigation } from "expo-router";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Forum = () => {
   const [data, setData] = useState(null);
@@ -80,18 +81,17 @@ const Forum = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <View style={styles.button}>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={navigateToHome}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/left-arrow.png")}
-          />
+      <TouchableOpacity onPress={navigateToHome}>
+        <View style={styles.button}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/left-arrow.png")}
+            />
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
       <Text testID="loginTitle" style={styles.title}>
         Upcoming
       </Text>

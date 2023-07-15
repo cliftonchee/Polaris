@@ -17,6 +17,7 @@ import useStore from "../../store/store";
 import { useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 // To navigate between screens, add '{ navigation }'
 // as an argument, and under onPress, refer to below
@@ -70,18 +71,15 @@ export default function Home({ navigation }) {
 
       {/* Customisable Button */}
       <View style={styles.button}>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Forum")}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/chat.png")}
-            // You can also use a network image by providing a URI
-            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
-          />
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("Forum")}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/chat.png")}
+            />
+          </View>
+        </TouchableOpacity>
 
         <View style={styles.buttonContainer}>
           <Button
@@ -95,18 +93,17 @@ export default function Home({ navigation }) {
             // source={{ uri: 'https://example.com/path/to/your/image.png' }}
           />
         </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Encyclopedia")}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/loupe.png")}
-            // You can also use a network image by providing a URI
-            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
-          />
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("Encyclopedia")}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/loupe.png")}
+              // You can also use a network image by providing a URI
+              // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

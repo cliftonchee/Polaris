@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     fontSize: 12.5,
     paddingBottom: 1.5,
     paddingTop: 5,
-    paddingLeft: 15,
+    paddingLeft: 0,
   },
   title: {
     alignItems: "center",
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   subtitle: {
     paddingLeft: 5,
     paddingRight: 5,
-    fontSize: 15,
+    fontSize: 12,
     color: colours.white,
     fontFamily: "LatoRegular",
   },
