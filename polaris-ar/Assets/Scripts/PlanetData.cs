@@ -6,9 +6,9 @@ public class PlanetData
 {
     private int PlanetCode;
     private string Name;
-    public float x;
-    public float y;
-    public float z;
+    private float x;
+    private float y;
+    private float z;
 
     public PlanetData(string name, int planetCode)
     {
