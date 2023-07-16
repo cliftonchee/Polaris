@@ -81,7 +81,7 @@ const Forum = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <TouchableOpacity onPress={navigateToHome}>
+      <TouchableOpacity onPress={navigateBack}>
         <View style={styles.button}>
           <View style={styles.buttonContainer}>
             <Button styleOverride={styles.buttonLayout} />

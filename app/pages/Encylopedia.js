@@ -63,7 +63,7 @@ const Encyclopedia = () => {
   return (
     <KeyboardAvoidingView style={styles.container}>
       {/* Title */}
-      <TouchableOpacity onPress={navigateToHome}>
+      <TouchableOpacity onPress={navigateBack}>
         <View style={styles.button}>
           <View style={styles.buttonContainer}>
             <Button styleOverride={styles.buttonLayout} />
