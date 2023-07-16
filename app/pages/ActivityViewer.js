@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Image, Text, StyleSheet, Pressable } from "react-native";
 import colours from "../components/Colours";
 import { useNavigation } from "expo-router";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ActivityViewer = ({ info }) => {
   const [name, setName] = useState(null);
