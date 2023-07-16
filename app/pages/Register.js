@@ -1,10 +1,15 @@
-import { StyleSheet, Text, View, Image, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  KeyboardAvoidingView,
+} from "react-native";
 import colours from "../components/Colours";
 import Button from "../components/Button";
 import InputBoxEmail from "../components/InputBox/InputBoxEmail";
 import InputBoxPass from "../components/InputBox/InputBoxPass";
 import InputBoxUser from "../components/InputBox/InputBoxUser";
-import { KeyboardAvoidingView } from "react-native";
 import { useHeaderHeight } from "@react-navigation/elements";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
@@ -18,11 +23,11 @@ export default function SignUp({ navigation }) {
   const [password, setPassword] = useState("");
   const [usernames, setName] = useState("");
   const [result, setValue] = useState(null); // State to store the user object
+  const [errorMessage, setErrorMessage] = useState(""); // State to store the error message
 
   const dbhandling = (value) => {
-    const urlParts = value.split("/");
-    const imageFileName = urlParts[urlParts.length - 1];
-    setValue(imageFileName);
+    // Saving Image path
+    setValue(value);
   };
 
   async function updatedb(person) {
@@ -48,9 +53,30 @@ export default function SignUp({ navigation }) {
         updatedb(user);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // Handle the error
+        switch (error.code) {
+          case "auth/email-already-in-use":
+            setErrorMessage(`Email address ${email} already in use.`);
+            break;
+          case "auth/invalid-email":
+            setErrorMessage(`Email address ${email} is invalid.`);
+            break;
+          case "auth/operation-not-allowed":
+            setErrorMessage("Error during sign up.");
+            break;
+          case "auth/weak-password":
+            setErrorMessage(
+              "Password is not strong enough. Add additional characters including special characters and numbers."
+            );
+            break;
+          default:
+            setErrorMessage(error.message);
+            break;
+        }
+
+        // Clear error message after 3 seconds
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 3000);
       });
   };
 
@@ -98,6 +124,9 @@ export default function SignUp({ navigation }) {
           >
             secureTex
           </InputBoxPass>
+          {errorMessage !== "" && (
+            <Text style={styles.errorMessage}>{errorMessage}</Text>
+          )}
         </View>
       </KeyboardAvoidingView>
       {/* Customisable Buttons */}
@@ -150,5 +179,10 @@ const styles = StyleSheet.create({
   },
   buttonsSideBySide: {
     flex: 1.3,
+  },
+  errorMessage: {
+    color: "red",
+    textAlign: "center",
+    marginTop: 10,
   },
 });

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Image, Text } from "react-native";
-import { color } from "react-native-reanimated";
+import { View, Image, Text, Pressable, Linking } from "react-native";
 import axios from "axios";
 import colours from "./Colours";
 
@@ -35,17 +34,17 @@ const NasaImage = () => {
     );
   }
 
+  const handlePress = () => {
+    Linking.openURL("https://apod.nasa.gov/apod/astropix.html");
+  };
+
   return (
-    <View>
+    <Pressable onPress={handlePress}>
       <Image
         source={{ uri: imageData.url }}
         style={{ width: 350, height: 200, paddingBottom: 10, borderRadius: 10 }}
       />
-      {/* Image title for reference */}
-      {/* <Text style={{ color: colours.white, justifyContent: "flex-end" }}>
-        {imageData.title}
-      </Text>. */}
-    </View>
+    </Pressable>
   );
 };
 

@@ -61,7 +61,7 @@ export default function Home({ navigation }) {
       <View
         style={{ alignItems: "center", height: 200, justifyContent: "center" }}
       >
-        <Pressable onPress={() => navigation.navigate("Login")}>
+        <Pressable>
           {/* NASA Image of the day */}
           <View style={styles.imageContainer}>
             <NasaImage />
