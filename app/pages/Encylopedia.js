@@ -24,9 +24,9 @@ const Encyclopedia = () => {
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
 
-  const navigateToHome = () => {
-    navigation.navigate("Home");
-  };
+  const navigateBack = () => {
+    navigation.goBack();
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,7 +53,7 @@ const Encyclopedia = () => {
     }
   }, [data]);
 
-  /* Repeated component stored in an array*/
+  /* Repeated component stored in an array */
   const len = data.length;
   console.log(len);
   const planetArr = data

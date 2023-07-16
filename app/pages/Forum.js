@@ -23,9 +23,9 @@ const Forum = () => {
   const [eventArr, setEventArr] = useState(null);
   const navigation = useNavigation();
 
-  const navigateToHome = () => {
-    navigation.navigate("Home");
-  };
+  const navigateBack = () => {
+    navigation.goBack();
+  }
 
   var currentTime = new Date();
   var year = currentTime.getFullYear().toString();
