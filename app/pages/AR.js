@@ -2,12 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import UnityView from '@azesmway/react-native-unity';
 import {
   StyleSheet,
-  Text,
   View,
   Image,
-  SafeAreaView,
-  Pressable,
-  ImageBackground,
+  TouchableOpacity
 } from "react-native";
 import colours from "../components/Colours";
 import Button from "../components/Button";
@@ -35,44 +32,41 @@ const AR = ({ navigation }) => {
           console.log('onUnityMessage', result.nativeEvent.message);
         }}
       />
-      <View style={styles.buttonRow}>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Forum")}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/chat.png")}
-            // You can also use a network image by providing a URI
-            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
-          />
-        </View>
 
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Home")}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/home.png")}
-            // You can also use a network image by providing a URI
-            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
-          />
-        </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("Encyclopedia")}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/loupe.png")}
-            // You can also use a network image by providing a URI
-            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
-          />
-        </View>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity onPress={() => navigation.navigate("Forum")}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/chat.png")}
+            />
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/home.png")}
+              // You can also use a network image by providing a URI
+              // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+            />
+          </View>
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={() => navigation.navigate("Encyclopedia")}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/loupe.png")}
+              // You can also use a network image by providing a URI
+              // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -85,11 +79,6 @@ const styles = StyleSheet.create({
     // Background
     flex: 1,
     //backgroundColor: colours.primary,
-  },
-  imageContainer: {
-    paddingTop: 0,
-    justifyContent: "center",
-    alignItems: "center",
   },
   image: {
     justifyContent: "center",
