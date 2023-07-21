@@ -13,7 +13,7 @@ namespace Polaris.Universe
         private float x;
         private float y;
         private float z;
-        private string name;
+        public string name;
 
         public StarData(string name, float ra, float dec, float mag)
         {
@@ -35,9 +35,10 @@ namespace Polaris.Universe
             this.y = r * Mathf.Cos(dec);
         }
 
-        public Vector3 GetPosition() 
+        public Vector3 GetPosition() // relative to Unity
         {
-            return new Vector3(this.x, this.y, this.z);
+            SphericalToCartesian();
+            return new Vector3(this.z, this.x, this.y);
         }
 
         public float GetMag() 
