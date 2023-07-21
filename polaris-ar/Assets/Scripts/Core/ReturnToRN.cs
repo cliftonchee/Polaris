@@ -12,16 +12,19 @@ public class NativeAPI {
 #endif
 }
 
-public class ReturnToRN : MonoBehaviour
+namespace Polaris.Core
 {
-    public void ButtonPressed()
+    public class ReturnToRN : MonoBehaviour
     {
-         if (Application.platform == RuntimePlatform.IPhonePlayer)
+        public void ButtonPressed()
         {
-#if UNITY_IOS && !UNITY_EDITOR
-            NativeAPI.sendMessageToMobileApp("The button has been tapped!");
-            
-#endif
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+    #if UNITY_IOS && !UNITY_EDITOR
+                NativeAPI.sendMessageToMobileApp("The button has been tapped!");
+                
+    #endif
+            }
         }
     }
 }

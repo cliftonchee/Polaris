@@ -13,6 +13,7 @@
 		2830871F2A3EDAD1008DD7E0 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2830871D2A3ED91C008DD7E0 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		283087302A3EE26C008DD7E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2830872F2A3EE26C008DD7E0 /* GoogleService-Info.plist */; };
 		283087352A3F4A85008DD7E0 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		285596C02A69986000543DCD /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2830871D2A3ED91C008DD7E0 /* UnityFramework.framework */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		51A8EC11CA60E05D29D73695 /* Pods_Polaris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB5E1BD73E14EE07C06C62 /* Pods_Polaris.framework */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
@@ -84,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A8EC11CA60E05D29D73695 /* Pods_Polaris.framework in Frameworks */,
+				285596C02A69986000543DCD /* UnityFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +264,8 @@
 		283087192A3ED91C008DD7E0 /* polaris-ar.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = "polaris-ar.app";
+			name = "polaris-ar.app";
+			path = polarisar.app;
 			remoteRef = 283087182A3ED91C008DD7E0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
