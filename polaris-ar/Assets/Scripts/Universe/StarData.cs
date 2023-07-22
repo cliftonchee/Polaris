@@ -24,6 +24,15 @@ namespace Polaris.Universe
             this.r = 2f;
         }
 
+        public StarData(string name, float ra, float dec, float mag, float r)
+        {
+            this.name = name;
+            this.ra = ra;
+            this.dec = dec;
+            this.mag = mag;
+            this.r = r;
+        }
+
         public void SphericalToCartesian()
         {
             this.ra = this.ra * (-15.0f) * Mathf.Deg2Rad;
@@ -38,7 +47,7 @@ namespace Polaris.Universe
         public Vector3 GetPosition() // relative to Unity
         {
             SphericalToCartesian();
-            return new Vector3(this.z, this.x, this.y);
+            return new Vector3(this.x, this.y, this.z);
         }
 
         public float GetMag() 

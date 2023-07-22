@@ -8,15 +8,12 @@ namespace Polaris.Core
     {
         public PositionCamera refCamera;
         [SerializeField] public float distFromObj = 1.2f;
-        private float isPositive = 1f;
-        private RectTransform rec;
         private Vector3 parent;
 
         void Start()
         {
             // To bring text closer to AR camera so text is always visible
             parent = transform.parent.position;
-            rec = GetComponent<RectTransform>();
         }
         void Update()
         {

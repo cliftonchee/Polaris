@@ -466,7 +466,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GSNJW8HT7Q;
+				DEVELOPMENT_TEAM = BTX7T59ZK3;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -485,7 +485,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Polaris.polarisapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Polaris.polarisapp10;
 				PRODUCT_NAME = Polaris;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -505,7 +505,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GSNJW8HT7Q;
+				DEVELOPMENT_TEAM = BTX7T59ZK3;
 				INFOPLIST_FILE = Polaris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -519,7 +519,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Polaris.polarisapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Polaris.polarisapp10;
 				PRODUCT_NAME = Polaris;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

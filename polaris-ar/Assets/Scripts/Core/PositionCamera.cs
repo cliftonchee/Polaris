@@ -49,7 +49,7 @@ namespace Polaris.Core
                 Input.location.Stop();
 
                 // Apply the rotation to the camera
-                cameraTransform.rotation = Quaternion.Euler(0, degNorth, 0f);
+                cameraTransform.rotation = Quaternion.Euler(0f, degNorth, 0f) * cameraTransform.rotation;
         }
 
     }

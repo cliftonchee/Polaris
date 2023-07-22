@@ -47,7 +47,7 @@ namespace Polaris.SolarSystem
                 planetsData[i] = new PlanetData(planetNames[i], planetCodes[i]);
 
                 // Sends HTTP request
-                string queryParams = $"?format=json&COMMAND='{planetCodes[i]}'&EPHEM_TYPE='VECTORS'&CENTER='500@0'&START_TIME='{nowString}'&STOP_TIME='{ltrString}'&STEP_SIZE='10 min'&CSV_FORMAT='YES'";
+                string queryParams = $"?format=json&COMMAND='{planetCodes[i]}'&EPHEM_TYPE='VECTORS'&CENTER='500@399'&START_TIME='{nowString}'&STOP_TIME='{ltrString}'&STEP_SIZE='10 min'&CSV_FORMAT='YES'";
                 UnityWebRequest request = UnityWebRequest.Get(url + queryParams);
 
                 yield return request.SendWebRequest();
@@ -61,10 +61,10 @@ namespace Polaris.SolarSystem
                     
                     // Set coordinates of planets
                     Transform planetPos = planets[i].transform;
-                    planetPos.position =  planetsData[i].adjustedScaleDown();
+                    planetPos.position =  planetsData[i].ScaleDown();
 
                     // Realign to Unity's coordinate system from IAU convention
-                    planetPos.position = new Vector3(-planetPos.position.z, planetPos.position.y, planetPos.position.x);
+                    //planetPos.position = new Vector3(-planetPos.position.z, planetPos.position.y, planetPos.position.x);
                 }
                 else
                 {
@@ -88,7 +88,7 @@ namespace Polaris.SolarSystem
             string[] lines = coordinatesData.Split(',');
 
             // Process Data
-            currPlanetData.setCoordinates(Single.Parse(lines[2]), Single.Parse(lines[3]), Single.Parse(lines[4]));
+            currPlanetData.SetCoordinates(Single.Parse(lines[2]), Single.Parse(lines[3]), Single.Parse(lines[4]));
         }
     }
 }
