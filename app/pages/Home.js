@@ -81,18 +81,18 @@ export default function Home({ navigation }) {
           </View>
         </TouchableOpacity>
 
-        <View style={styles.buttonContainer}>
-          <Button
-            styleOverride={styles.buttonLayout}
-            onPress={() => navigation.navigate("AR")}
-          />
-          <Image
-            style={styles.overlayImage}
-            source={require("../assets/images/telescope.png")}
-            // You can also use a network image by providing a URI
-            // source={{ uri: 'https://example.com/path/to/your/image.png' }}
-          />
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("AR")}>
+          <View style={styles.buttonContainer}>
+            <Button styleOverride={styles.buttonLayout} />
+            <Image
+              style={styles.overlayImage}
+              source={require("../assets/images/telescope.png")}
+              // You can also use a network image by providing a URI
+              // source={{ uri: 'https://example.com/path/to/your/image.png' }}
+            />
+          </View>
+        </TouchableOpacity>
+        
         <TouchableOpacity onPress={() => navigation.navigate("Encyclopedia")}>
           <View style={styles.buttonContainer}>
             <Button styleOverride={styles.buttonLayout} />

@@ -23,9 +23,9 @@ const Forum = () => {
   const [eventArr, setEventArr] = useState(null);
   const navigation = useNavigation();
 
-  const navigateToHome = () => {
-    navigation.navigate("Home");
-  };
+  const navigateBack = () => {
+    navigation.goBack();
+  }
 
   var currentTime = new Date();
   var year = currentTime.getFullYear().toString();
@@ -81,7 +81,7 @@ const Forum = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container}>
-      <TouchableOpacity onPress={navigateToHome}>
+      <TouchableOpacity onPress={navigateBack}>
         <View style={styles.button}>
           <View style={styles.buttonContainer}>
             <Button styleOverride={styles.buttonLayout} />
