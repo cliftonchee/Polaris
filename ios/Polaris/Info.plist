@@ -47,14 +47,14 @@
 			</dict>
 		</dict>
 	</dict>
-    <key>NSCameraUsageDescription</key>
-    <string>Required For AR.</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>Your location will be used to determine the orientation for AR.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Your location will be used to determine the orientation for AR.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Your location will be used to determine the orientation for AR.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Required For AR.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location will be used to determine the orientation for AR.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location will be used to determine the orientation for AR.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location will be used to determine the orientation for AR.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app requires to access your photo library to show image on profile and send via chat</string>
 	<key>NSRemindersUsageDescription</key>

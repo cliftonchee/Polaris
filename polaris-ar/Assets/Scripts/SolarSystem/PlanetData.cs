@@ -18,26 +18,23 @@ namespace Polaris.SolarSystem
             this.Name = name;
         }
 
-        public void setCoordinates(float x, float y, float z)
+        public void SetCoordinates(float x, float y, float z)
         {
             this.x = x;
             this.y = y;
             this.z = z;
         }
 
-        // Converted to Unity coordinate system
-        public Vector3 getPosScaled()
-        {
-            return new Vector3(this.x / 1000000f , -this.y / 1000000f , this.z / 1000000f);
-        }
-
-        // Flip x and z to fit our scale
-        public Vector3 adjustedScaleDown()
+        // Flip y and z to fit our scale
+        public Vector3 ScaleDown()
         {
             // Scales down by 10^6
-            return new Vector3(this.z / 1000000f, -this.y / 1000000f, -this.x / 1000000f);
+            return new Vector3(this.x / 1000000f, this.y / 1000000f, this.z / 1000000f);
         }
 
-
+        public Vector3 GetCoordinates()
+        {
+            return new Vector3(this.x / 1000000f, this.z / 1000000f, this.y / 1000000f);
+        }
     }
 }

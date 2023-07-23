@@ -55,12 +55,10 @@ namespace Tests.PlayMode
                     
                     // Set coordinates of planets
                     Transform planetPos = GameObject.Find(planetNames[i]).transform;
-                    planetPos.position =  planetsData[i].adjustedScaleDown();
+                    planetPos.position =  planetsData[i].ScaleDown();
 
-                    // Realign to Unity's coordinate system from IAU convention
-                    planetPos.position = new Vector3(-planetPos.position.z, planetPos.position.y, planetPos.position.x);
-                    Assert.AreEqual(planetsData[i].getPosScaled(), planetPos.position, 
-                            $"{planetNames[i]} expected: " + planetsData[i].getPosScaled() +
+                    Assert.AreEqual(planetsData[i].GetCoordinates(), planetPos.position, 
+                            $"{planetNames[i]} expected: " + planetsData[i].GetCoordinates() +
                             " and actual value: " + planetPos.position);
                 }
                 else
@@ -83,7 +81,7 @@ namespace Tests.PlayMode
             string[] lines = coordinatesData.Split(',');
 
             // Process Data
-            currPlanetData.setCoordinates(Single.Parse(lines[2]), Single.Parse(lines[3]), Single.Parse(lines[4]));
+            currPlanetData.SetCoordinates(Single.Parse(lines[2]), Single.Parse(lines[3]), Single.Parse(lines[4]));
         }
     }
 }
