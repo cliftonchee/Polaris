@@ -16,8 +16,78 @@ VR Stargazing app using Unity AR Foundation
 
 ## Installation
 
-Fork repo and run 'npm install' on terminal to install dependencies.
-Run 'npm run' and follow accordingly to run on iOS or Android simulator.
+1. Download XCode
+
+2. Download Unity (ver. 2021.3.24f1)
+
+3. Open Unity Hub
+- Under “Installs”, click settings icon of this version, click “Add modules”
+- Install iOS Build Support
+
+4. In “Projects” tab, click “Open” button (beside “New Project”)
+- Find Polaris folder -> polaris-ar folder
+- Open “polaris-ar” folder
+
+5. At the top taskbar, click “File” -> “Build Settings…”
+- Click iOS under “Platform” and check “Development Build”
+- Click “Switch Platform”
+
+6. Press “Build” under Build Settings
+- Press “New Folder”, then add “builds” folder
+- Press “Choose’
+- Press “Build And Run’
+
+7. Xcode should throw an error (sign-in certificate)
+- Double-click the error
+- Click “Signing & Capabilities tab”
+- Check “Automatically manage signing”
+- Click Team dropdown box, then “Add an account”
+- Use “yeoclifton123@gmail.com” & “Orbitaltest123!” for the account
+- Bundle identifier: “com.Polaris.polarisappar”
+
+9. Connect phone to laptop via cable
+
+10. Enable Developer mode
+- Settings -> Privacy & Security -> Developer Mode -> Check box -> Restart Phone
+
+11. On Xcode, click the target to be your iPhone
+
+12. Press the Play Button on top-left.
+
+13. Trust Developer on your device
+General -> VPN & Device Management -> Developer app -> Trust
+
+14. App will run.
+
+(Video link: https://www.youtube.com/watch?v=-Hr4-XNCf8Y)
+
+Full App
+
+1. Pull from GitHub
+
+2. Follow AR testing steps.
+
+3. Go to Xcode.
+- “Open a project or file”
+- Find Polaris folder -> “ios” -> open “ios.xcworkspace”
+
+4. In terminal, run following commands:
+- npm install
+- cd ios
+- pod install
+
+5. Under bundle identifier: use “polarisapp123” with the same account
+
+6. Press the Play button. (Requires both devices to be on same Wi-Fi network)
+
+6. Should see “codesign wants to access key…”
+- Key password of laptop
+- Press “Always Allow”
+
+7. Trust Developer similar to AR process
+
+8. Run again. (if loads directly into Unity, try running again)
+
 
 ## NUS Orbital Project '23
 
