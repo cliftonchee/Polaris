@@ -47,7 +47,7 @@ namespace Polaris.SolarSystem
                 planetsData[i] = new PlanetData(planetNames[i], planetCodes[i]);
 
                 // Sends HTTP request
-                string queryParams = $"?format=json&COMMAND='{planetCodes[i]}'&EPHEM_TYPE='VECTORS'&CENTER='500@399'&START_TIME='{nowString}'&STOP_TIME='{ltrString}'&STEP_SIZE='10 min'&CSV_FORMAT='YES'";
+                string queryParams = $"?format=json&COMMAND='{planetCodes[i]}'&EPHEM_TYPE='VECTORS'&CENTER='coord@399'&COORD_TYPE=GEODETIC&SITE_COORD='+103.75000,+1.36670,0'&START_TIME='{nowString}'&STOP_TIME='{ltrString}'&STEP_SIZE='10 min'&CSV_FORMAT='YES'";
                 UnityWebRequest request = UnityWebRequest.Get(url + queryParams);
 
                 yield return request.SendWebRequest();

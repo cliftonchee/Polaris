@@ -29,7 +29,7 @@ namespace Polaris.SolarSystem
         public Vector3 ScaleDown()
         {
             // Scales down by 10^6
-            return new Vector3(this.z / 1000000f, this.x / 1000000f, this.y / 1000000f);
+            return new Vector3(this.x / 1000000f, this.y / 1000000f, this.z / 1000000f);
         }
 
         public Vector3 GetCoordinates()

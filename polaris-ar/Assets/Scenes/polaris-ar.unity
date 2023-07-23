@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &156608414 stripped
 GameObject:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &189273506 stripped
 GameObject:
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &272977389 stripped
 GameObject:
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 0.3
 --- !u!1 &422218013
 GameObject:
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &1297746008 stripped
 GameObject:
@@ -880,7 +880,6 @@ GameObject:
   - component: {fileID: 1435971381}
   - component: {fileID: 1435971380}
   - component: {fileID: 1435971379}
-  - component: {fileID: 1435971378}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: Untagged
@@ -931,19 +930,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1435971378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435971376}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bead84d5456749a1b65957461820bfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 1435971383}
 --- !u!114 &1435971379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,7 +1045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &1473231972 stripped
 GameObject:
@@ -1079,7 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &1477644673 stripped
 GameObject:
@@ -1119,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &1810160286 stripped
 GameObject:
@@ -1199,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1 &1840986852 stripped
 GameObject:
@@ -1297,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22f05e582a544047a503f5605a01344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refCamera: {fileID: 1435971378}
+  refCamera: {fileID: 1368874961}
   distFromObj: 1.2
 --- !u!1001 &2860552207903244
 PrefabInstance:
@@ -3260,26 +3246,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cardinal Directions
       objectReference: {fileID: 0}
+    - target: {fileID: 5028244466328772090, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028244466328772090, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5028244466328772091, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
         type: 3}
       propertyPath: refCamera
       value: 
-      objectReference: {fileID: 1435971378}
+      objectReference: {fileID: 1368874961}
     - target: {fileID: 5028244466466335966, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
         type: 3}
       propertyPath: refCamera
       value: 
-      objectReference: {fileID: 1435971378}
+      objectReference: {fileID: 1368874961}
+    - target: {fileID: 5028244466749124678, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028244466749124678, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5028244466749124679, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
         type: 3}
       propertyPath: refCamera
       value: 
-      objectReference: {fileID: 1435971378}
+      objectReference: {fileID: 1368874961}
     - target: {fileID: 5028244466796275269, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
         type: 3}
       propertyPath: refCamera
       value: 
-      objectReference: {fileID: 1435971378}
+      objectReference: {fileID: 1368874961}
     - target: {fileID: 8611999786037630245, guid: 9892fcb8e6f9b4a2eaa45c1c4ea0e039,
         type: 3}
       propertyPath: m_RootOrder
@@ -3562,7 +3568,7 @@ PrefabInstance:
         type: 3}
       propertyPath: refCamera
       value: 
-      objectReference: {fileID: 1435971378}
+      objectReference: {fileID: 1368874961}
     - target: {fileID: 9081922132010617965, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3581,18 +3587,18 @@ PrefabInstance:
     - target: {fileID: 9081922132022691989, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: m_fontSize
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9081922132022691989, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9081922132022691990, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: refCamera
       value: 
-      objectReference: {fileID: 1435971378}
+      objectReference: {fileID: 1368874961}
     - target: {fileID: 9081922132022691990, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: distFromObj
@@ -3601,17 +3607,17 @@ PrefabInstance:
     - target: {fileID: 9081922132022691991, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9081922132022691991, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.05
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9081922132022691991, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.05
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 9081922132109258735, guid: 9de5882c07c2a492da3125c36da09ed7,
         type: 3}
