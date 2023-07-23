@@ -16,6 +16,8 @@ VR Stargazing app using Unity AR Foundation
 
 ## Installation
 
+Can also refer to README document.
+
 1. Download XCode
 
 2. Download Unity (ver. 2021.3.24f1)
