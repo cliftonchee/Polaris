@@ -111,7 +111,7 @@
 		283087132A3ED91B008DD7E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				283087192A3ED91C008DD7E0 /* polaris-ar.app */,
+				283087192A3ED91C008DD7E0 /* polarisar.app */,
 				2830871B2A3ED91C008DD7E0 /* Unity-iPhone Tests.xctest */,
 				2830871D2A3ED91C008DD7E0 /* UnityFramework.framework */,
 			);
@@ -261,11 +261,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		283087192A3ED91C008DD7E0 /* polaris-ar.app */ = {
+		283087192A3ED91C008DD7E0 /* polarisar.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			name = "polaris-ar.app";
-			path = polarisar.app;
+			name = polarisar.app;
+			path = polarisappar.app;
 			remoteRef = 283087182A3ED91C008DD7E0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -466,7 +466,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BTX7T59ZK3;
+				DEVELOPMENT_TEAM = HDR9MJTKVS;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -485,7 +485,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Polaris.polarisapp10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Polaris.polarisapp123;
 				PRODUCT_NAME = Polaris;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -505,7 +505,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BTX7T59ZK3;
+				DEVELOPMENT_TEAM = GSNJW8HT7Q;
 				INFOPLIST_FILE = Polaris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
